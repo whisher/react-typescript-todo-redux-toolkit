@@ -4,4 +4,4 @@ A simple todo using react typescript redux-toolkit scss and bootstrap
 
 ## Run
 
--npm run dev
+- npm run dev
