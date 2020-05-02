@@ -1,6 +1,6 @@
-# React Typescript Todo Redux
+# React Typescript Todo Redux Toolkit
 
-A simple todo using react typescript redux scss and bootstrap
+A simple todo using react typescript redux-toolkit scss and bootstrap
 
 ## Run
 
