@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Todo } from "../types/todo";
+import { Todo } from "../type";
 const URL = "http://localhost:3030";
 
 export const todosService = {

@@ -1,23 +1,28 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ListGroup } from "react-bootstrap";
-import { Todo } from "../types/todo";
-import { RootState } from "../index";
-import { addTodos, loadTodos, deleteTodos } from "../store/effects";
+import { Todo } from "../type";
+
+import {
+  addTodosAsync,
+  deleteTodosAsync,
+  loadTodosAsync,
+  selectTodos,
+} from "../store/todosSlice";
 import TodoForm from "./components/todo.form";
 import "./App.scss";
 
 function App() {
-  const todos = useSelector((state: RootState) => state.todos);
+  const todos = useSelector(selectTodos);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadTodos());
+    dispatch(loadTodosAsync());
   }, []);
   const addTodo = (data: Todo) => {
-    dispatch(addTodos(data));
+    dispatch(addTodosAsync(data));
   };
   const handleDelete = (data: Todo) => {
-    dispatch(deleteTodos(data));
+    dispatch(deleteTodosAsync(data));
   };
   return (
     <div className="wrapper">
@@ -33,7 +38,7 @@ function App() {
         <div className="row justify-content-center mt-5">
           <div className="col-6">
             <ListGroup>
-              {todos.data.map((todo: Todo) => {
+              {todos.map((todo: Todo) => {
                 return (
                   <ListGroup.Item
                     key={todo.id}

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { v1 as uuidv1 } from "uuid";
-import { Todo } from "../../types/todo";
+import { Todo } from "../../type";
 
 export interface FormTodoProps {
   onSubmit: (data: Todo) => void;
